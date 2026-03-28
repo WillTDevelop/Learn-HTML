@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Atlas | Learn HTML Visually</title>
+    <meta
+      name="description"
+      content="A static website that teaches the fundamentals of HTML with examples, semantic structure, forms, and hands-on practice."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <nav class="topbar">
+        <a class="brand" href="#top">HTML Atlas</a>
+        <div class="nav-links">
+          <a href="#basics">Basics</a>
+          <a href="#anatomy">Anatomy</a>
+          <a href="#playground">Playground</a>
+          <a href="#cheatsheet">Cheat Sheet</a>
+        </div>
+      </nav>
+
+      <div class="hero-grid">
+        <section class="hero-copy">
+          <p class="eyebrow">Static website - beginner friendly - hands-on</p>
+          <h1>Learn HTML by seeing how the web is built.</h1>
+          <p class="hero-text">
+            HTML is the structure of every web page. This guide teaches the
+            essential tags, the logic behind semantic markup, and how to build
+            a clean page from scratch.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#basics">Start Learning</a>
+            <a class="button secondary" href="#playground">Try Live Examples</a>
+          </div>
+          <ul class="hero-points">
+            <li>Read fast lessons with plain-language explanations</li>
+            <li>Compare markup with the rendered result</li>
+            <li>Practice editing real HTML snippets in the browser</li>
+          </ul>
+        </section>
+
+        <aside class="hero-card">
+          <p class="card-label">Example page structure</p>
+          <pre><code>&lt;body&gt;
+  &lt;header&gt;...&lt;/header&gt;
+  &lt;main&gt;
+    &lt;section&gt;...&lt;/section&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;...&lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+          <p class="card-note">
+            HTML gives meaning to content before CSS styles it or JavaScript
+            adds behavior.
+          </p>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <section class="section intro-band">
+        <div class="section-heading">
+          <p class="section-kicker">What HTML does</p>
+          <h2>The browser reads your tags like a map.</h2>
+        </div>
+        <div class="intro-grid">
+          <article class="info-card">
+            <h3>Structure</h3>
+            <p>
+              HTML organizes content into headings, paragraphs, lists, links,
+              images, sections, and more.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Meaning</h3>
+            <p>
+              Semantic tags such as <code>&lt;article&gt;</code> and
+              <code>&lt;nav&gt;</code> tell browsers and assistive tools what
+              each part of a page represents.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Foundation</h3>
+            <p>
+              CSS handles presentation and JavaScript handles behavior, but HTML
+              is the foundation both depend on.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="basics">
+        <div class="section-heading">
+          <p class="section-kicker">Lesson 1</p>
+          <h2>HTML Basics</h2>
+          <p>
+            Most HTML uses opening and closing tags. Content lives between them.
+          </p>
+        </div>
+
+        <div class="lesson-grid">
+          <article class="lesson-card accent-a">
+            <h3>Elements</h3>
+            <p>
+              An element includes the tag and its content, like
+              <code>&lt;p&gt;Hello&lt;/p&gt;</code>.
+            </p>
+          </article>
+          <article class="lesson-card accent-b">
+            <h3>Attributes</h3>
+            <p>
+              Attributes add extra information, like
+              <code>href</code> on a link or <code>src</code> on an image.
+            </p>
+          </article>
+          <article class="lesson-card accent-c">
+            <h3>Nesting</h3>
+            <p>
+              Elements can sit inside other elements. Keep them properly opened
+              and closed to avoid broken layouts.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split-section" id="anatomy">
+        <div class="section-heading">
+          <p class="section-kicker">Lesson 2</p>
+          <h2>Anatomy of a Web Page</h2>
+          <p>
+            A good HTML document follows a predictable structure that browsers
+            expect.
+          </p>
+        </div>
+
+        <div class="two-column">
+          <div class="code-panel">
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;title&gt;My First Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welcome&lt;/h1&gt;
+    &lt;p&gt;This is a page.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+
+          <div class="concept-list">
+            <article>
+              <h3><code>&lt;!DOCTYPE html&gt;</code></h3>
+              <p>Tells the browser to use modern HTML standards.</p>
+            </article>
+            <article>
+              <h3><code>&lt;head&gt;</code></h3>
+              <p>Contains page metadata, title, and links to stylesheets.</p>
+            </article>
+            <article>
+              <h3><code>&lt;body&gt;</code></h3>
+              <p>Contains everything that appears on the visible page.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="section-kicker">Lesson 3</p>
+          <h2>Common HTML Tags</h2>
+          <p>
+            These tags show up in almost every project. Learn what each one is
+            for.
+          </p>
+        </div>
+
+        <div class="tag-grid">
+          <article class="tag-card">
+            <h3><code>&lt;h1&gt; to &lt;h6&gt;</code></h3>
+            <p>Headings create a content hierarchy.</p>
+          </article>
+          <article class="tag-card">
+            <h3><code>&lt;p&gt;</code></h3>
+            <p>Paragraphs hold blocks of text.</p>
+          </article>
+          <article class="tag-card">
+            <h3><code>&lt;a&gt;</code></h3>
+            <p>Links connect your page to another page or location.</p>
+          </article>
+          <article class="tag-card">
+            <h3><code>&lt;img&gt;</code></h3>
+            <p>Images embed pictures and should include descriptive alt text.</p>
+          </article>
+          <article class="tag-card">
+            <h3><code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code></h3>
+            <p>Lists group related items in bullet or numbered form.</p>
+          </article>
+          <article class="tag-card">
+            <h3><code>&lt;div&gt;</code></h3>
+            <p>A generic container when no semantic tag fits better.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="section-kicker">Lesson 4</p>
+          <h2>Semantic HTML</h2>
+          <p>
+            Semantic elements make pages easier to understand for people,
+            browsers, and assistive technology.
+          </p>
+        </div>
+
+        <div class="semantic-layout">
+          <article class="semantic-card">
+            <h3><code>&lt;header&gt;</code></h3>
+            <p>Introductory content for a page or section.</p>
+          </article>
+          <article class="semantic-card">
+            <h3><code>&lt;nav&gt;</code></h3>
+            <p>A collection of important navigation links.</p>
+          </article>
+          <article class="semantic-card">
+            <h3><code>&lt;main&gt;</code></h3>
+            <p>The page's primary content, used once per page.</p>
+          </article>
+          <article class="semantic-card">
+            <h3><code>&lt;section&gt;</code></h3>
+            <p>A thematic grouping of related content.</p>
+          </article>
+          <article class="semantic-card">
+            <h3><code>&lt;article&gt;</code></h3>
+            <p>A standalone piece of content like a post or story.</p>
+          </article>
+          <article class="semantic-card">
+            <h3><code>&lt;footer&gt;</code></h3>
+            <p>Closing content such as credits, links, or contact info.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split-section">
+        <div class="section-heading">
+          <p class="section-kicker">Lesson 5</p>
+          <h2>Forms and Input</h2>
+          <p>
+            Forms collect information from users. Labels are important for
+            usability and accessibility.
+          </p>
+        </div>
+
+        <div class="two-column">
+          <div class="concept-list">
+            <article>
+              <h3><code>&lt;form&gt;</code></h3>
+              <p>Wraps input fields that belong together.</p>
+            </article>
+            <article>
+              <h3><code>&lt;label&gt;</code></h3>
+              <p>Describes what an input is for.</p>
+            </article>
+            <article>
+              <h3><code>&lt;input&gt;</code></h3>
+              <p>Creates fields like text boxes, email fields, and checkboxes.</p>
+            </article>
+            <article>
+              <h3><code>&lt;button&gt;</code></h3>
+              <p>Triggers form submission or other actions.</p>
+            </article>
+          </div>
+
+          <div class="code-panel">
+            <pre><code>&lt;form&gt;
+  &lt;label for="email"&gt;Email&lt;/label&gt;
+  &lt;input id="email" type="email" /&gt;
+
+  &lt;button type="submit"&gt;
+    Subscribe
+  &lt;/button&gt;
+&lt;/form&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="section playground" id="playground">
+        <div class="section-heading">
+          <p class="section-kicker">Practice</p>
+          <h2>Interactive HTML Playground</h2>
+          <p>
+            Switch between examples or type any HTML you want. The editor adds
+            closing tags for common elements, supports Tab indentation, lets
+            you type <code>!</code> plus Enter for a starter page, and updates
+            the preview live.
+          </p>
+        </div>
+
+        <div class="playground-controls" aria-label="Example selector">
+          <button class="example-button active" data-example="blank">
+            Blank Canvas
+          </button>
+          <button class="example-button" data-example="profile">
+            Profile Card
+          </button>
+          <button class="example-button" data-example="article">
+            Article
+          </button>
+          <button class="example-button" data-example="form">
+            Form
+          </button>
+        </div>
+
+        <div class="playground-grid">
+          <div class="editor-panel">
+            <label class="editor-label" for="html-editor">HTML Code</label>
+            <div class="editor-toolbar">
+              <span>Auto-closing tags on</span>
+              <span>Tab = 2 spaces</span>
+              <span>! + Enter = HTML starter</span>
+              <span>Live preview</span>
+            </div>
+            <textarea id="html-editor" spellcheck="false"></textarea>
+          </div>
+          <div class="preview-panel">
+            <p class="preview-label">Rendered Preview</p>
+            <iframe
+              id="preview-frame"
+              title="HTML preview"
+              sandbox="allow-same-origin"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="cheatsheet">
+        <div class="section-heading">
+          <p class="section-kicker">Reference</p>
+          <h2>Mini HTML Cheat Sheet</h2>
+          <p>Use this quick reference when building your first pages.</p>
+        </div>
+
+        <div class="cheatsheet-grid">
+          <article class="sheet-card">
+            <h3>Document Setup</h3>
+            <ul>
+              <li><code>&lt;!DOCTYPE html&gt;</code></li>
+              <li><code>&lt;html lang="en"&gt;</code></li>
+              <li><code>&lt;head&gt;</code> for metadata</li>
+              <li><code>&lt;body&gt;</code> for visible content</li>
+            </ul>
+          </article>
+          <article class="sheet-card">
+            <h3>Text Content</h3>
+            <ul>
+              <li><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code></li>
+              <li><code>&lt;p&gt;</code> paragraphs</li>
+              <li><code>&lt;strong&gt;</code> strong importance</li>
+              <li><code>&lt;em&gt;</code> emphasis</li>
+            </ul>
+          </article>
+          <article class="sheet-card">
+            <h3>Media & Links</h3>
+            <ul>
+              <li><code>&lt;a href=""&gt;</code> links</li>
+              <li><code>&lt;img src="" alt="" /&gt;</code> images</li>
+              <li><code>&lt;figure&gt;</code> grouped media</li>
+              <li><code>&lt;figcaption&gt;</code> captions</li>
+            </ul>
+          </article>
+          <article class="sheet-card">
+            <h3>Layout & Semantics</h3>
+            <ul>
+              <li><code>&lt;header&gt;</code></li>
+              <li><code>&lt;nav&gt;</code></li>
+              <li><code>&lt;main&gt;</code></li>
+              <li><code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Built as a static learning site for HTML beginners.</p>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
