@@ -15,6 +15,9 @@ It includes short lessons on HTML structure, common tags, semantic HTML, forms, 
   - `Tab` inserts spaces for indentation
   - Typing `!` and pressing `Enter` expands a full HTML starter template
 
+## Where to visit the site?
+Go to https://willtdevelop.github.io/Learn-HTML/
+
 ## Project Files
 
 - `index.html` - the main website content
