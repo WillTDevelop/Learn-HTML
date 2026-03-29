@@ -17,16 +17,20 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="hero" id="top">
+    <div class="site-nav">
       <nav class="topbar">
         <a class="brand" href="#top">HTML Atlas</a>
         <div class="nav-links">
           <a href="#basics">Basics</a>
           <a href="#anatomy">Anatomy</a>
+          <a href="#quiz">Quiz</a>
           <a href="#playground">Playground</a>
           <a href="#cheatsheet">Cheat Sheet</a>
         </div>
       </nav>
+    </div>
+
+    <header class="hero" id="top">
 
       <div class="hero-grid">
         <section class="hero-copy">
@@ -339,6 +343,28 @@
             ></iframe>
           </div>
         </div>
+      </section>
+
+      <section class="section quiz-section" id="quiz">
+        <div class="section-heading">
+          <p class="section-kicker">Practice Check</p>
+          <h2>HTML Quiz</h2>
+          <p>
+            Answer 10 questions based on the lessons above. If you miss one,
+            the quiz will tell you what went wrong and what concept to review.
+          </p>
+        </div>
+
+        <form id="quiz-form" class="quiz-form">
+          <div id="quiz-questions" class="quiz-questions"></div>
+          <div class="quiz-actions">
+            <button class="button primary" type="submit">Check Answers</button>
+            <button class="button secondary" type="button" id="reset-quiz">
+              Reset Quiz
+            </button>
+          </div>
+          <p id="quiz-summary" class="quiz-summary" aria-live="polite"></p>
+        </form>
       </section>
 
       <section class="section" id="cheatsheet">
