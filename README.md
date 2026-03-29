@@ -1,40 +1,52 @@
 # HTML Atlas
 
-HTML Atlas is a static website that teaches people the basics of HTML in a visual, beginner-friendly way.
+HTML Atlas is a static website that teaches HTML fundamentals with guided lessons, a quiz, and a separate full-page playground for hands-on practice.
 
-It includes short lessons on HTML structure, common tags, semantic HTML, forms, and an interactive playground where users can type their own HTML and see the result instantly.
+## What The Project Includes
 
-## What This Website Includes
+- A lesson-based homepage in `index.html`
+- A 10-question quiz tied directly to the lesson content
+- A dedicated playground page in `playground.html`
+- Shared light and dark mode across the whole site
+- Live editing for HTML, CSS, and JavaScript in separate tabs
+- Autosave with `localStorage`
+- Starter templates, challenges, hints, and progress tracking
 
-- A landing page that explains what HTML is and why it matters
-- Beginner lessons covering the core building blocks of HTML
-- A cheat sheet for common tags and page structure
-- An interactive HTML playground with live preview
-- Editor-style features in the playground:
-  - Auto-closing tags like `<h1></h1>`
-  - `Tab` inserts spaces for indentation
-  - Typing `!` and pressing `Enter` expands a full HTML starter template
+## Playground Features
 
-## Where to visit the site?
-Go to https://willtdevelop.github.io/Learn-HTML/
+The playground includes:
+
+- Live preview inside a sandboxed `<iframe>`
+- HTML, CSS, and JavaScript tabs
+- Run, reset, undo, redo, copy, format, and download actions
+- Starter templates
+- Device preview modes for desktop, tablet, and mobile
+- Syntax highlighting and line numbers through CodeMirror
+- Simple autocomplete support
+- Shortcut helpers like `!` for boilerplate and `ul>li*3`
+- Basic issue detection for common beginner mistakes
+- Challenges, XP, badges, and unlockable templates
 
 ## Project Files
 
-- `index.html` - the main website content
-- `styles.css` - all visual styling and responsive layout rules
-- `script.js` - playground behavior and editor-like interactions
+- `index.html` - the lesson homepage
+- `playground.html` - the dedicated editor experience
+- `styles.css` - shared styling for the homepage and playground
+- `script.js` - homepage quiz logic
+- `playground.js` - playground editor logic
+- `theme.js` - shared theme mode logic
 
 ## How To Run Locally
 
-Because this is a static website, there is no build step or dependency install.
+This project is fully static, so there is no package install or build step.
 
-### Option 1: Open the file directly
+### Option 1
 
-Open `index.html` in your browser.
+Open `index.html` or `playground.html` directly in your browser.
 
-### Option 2: Run a simple local server
+### Option 2
 
-If you want to serve it locally in a more typical web-dev setup, run:
+Run a local static server:
 
 ```bash
 python3 -m http.server 8000
@@ -46,16 +58,8 @@ Then open:
 http://localhost:8000
 ```
 
-## Who This Is For
-
-This project is for:
-
-- Beginners learning HTML for the first time
-- People who want a simple static teaching site
-- Anyone who wants to experiment with HTML in a lightweight browser playground
-
 ## Notes
 
-- This project uses plain HTML, CSS, and JavaScript
-- No framework or package manager is required
-- The site is designed to work as a fully static project
+- The playground uses CodeMirror assets from a CDN for syntax highlighting and editor behavior
+- Theme mode is shared across pages with `localStorage`
+- Progress and playground code are saved locally in the browser

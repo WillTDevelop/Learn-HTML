@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Atlas Playground</title>
+    <meta
+      name="description"
+      content="A dedicated HTML, CSS, and JavaScript playground with live preview, templates, autosave, challenges, and progress tracking."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/material-darker.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/eclipse.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="playground-page">
+    <div class="site-nav">
+      <nav class="topbar">
+        <a class="brand" href="index.html">HTML Atlas</a>
+        <div class="nav-links">
+          <a href="index.html#basics">Lessons</a>
+          <a href="index.html#quiz">Quiz</a>
+          <a href="playground.html">Playground</a>
+        </div>
+        <button
+          class="theme-toggle"
+          type="button"
+          data-theme-toggle
+          aria-label="Toggle color theme"
+        >
+          <span data-theme-label>Dark Mode</span>
+        </button>
+      </nav>
+    </div>
+
+    <main class="playground-shell">
+      <section class="playground-hero">
+        <div>
+          <p class="section-kicker">Full-Pro Playground</p>
+          <h1>Build HTML, CSS, and JavaScript in one clean workspace.</h1>
+          <p class="hero-text">
+            This editor adds templates, autosave, live preview, challenges,
+            progress tracking, device modes, copy and download tools, and a few
+            editor-style helpers for faster learning.
+          </p>
+        </div>
+        <div class="playground-hero-cards">
+          <article class="status-card">
+            <p class="status-label">XP</p>
+            <strong id="xp-value">0</strong>
+          </article>
+          <article class="status-card">
+            <p class="status-label">Level</p>
+            <strong id="level-value">1</strong>
+          </article>
+          <article class="status-card">
+            <p class="status-label">Badge</p>
+            <strong id="badge-value">Explorer</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="progress-card">
+        <div class="progress-copy">
+          <p class="section-kicker">Learning Progress</p>
+          <h2>Challenge progress and unlocks</h2>
+          <p id="progress-copy">
+            Complete beginner challenges to unlock the advanced landing-page
+            template and earn your next badge.
+          </p>
+        </div>
+        <div class="progress-track" aria-hidden="true">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </section>
+
+      <section class="playground-layout">
+        <div class="workspace-panel">
+          <div class="tool-row">
+            <label class="field-group">
+              <span>Template</span>
+              <select id="template-select"></select>
+            </label>
+            <label class="field-group">
+              <span>Challenge</span>
+              <select id="challenge-select"></select>
+            </label>
+            <label class="field-group">
+              <span>Editor Theme</span>
+              <select id="editor-theme-select">
+                <option value="material-darker">Material Darker</option>
+                <option value="eclipse">Eclipse</option>
+                <option value="dracula">Dracula</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="builder-toolbar">
+            <span class="section-kicker">Snippet Builder</span>
+            <div class="snippet-actions">
+              <button class="chip-button" type="button" data-snippet="hero">
+                Hero Block
+              </button>
+              <button class="chip-button" type="button" data-snippet="cards">
+                Card Grid
+              </button>
+              <button class="chip-button" type="button" data-snippet="cta">
+                CTA Button
+              </button>
+            </div>
+          </div>
+
+          <div class="editor-panel-pro">
+            <div class="tab-strip" role="tablist" aria-label="Code tabs">
+              <button class="tab-button active" type="button" data-tab="html">
+                HTML
+              </button>
+              <button class="tab-button" type="button" data-tab="css">
+                CSS
+              </button>
+              <button class="tab-button" type="button" data-tab="js">
+                JavaScript
+              </button>
+            </div>
+
+            <div class="editor-actions">
+              <button class="button primary" type="button" id="run-button">
+                Run
+              </button>
+              <button class="button secondary" type="button" id="reset-button">
+                Reset
+              </button>
+              <button class="button secondary" type="button" id="copy-button">
+                Copy Tab
+              </button>
+              <button class="button secondary" type="button" id="download-button">
+                Download HTML
+              </button>
+              <button class="button secondary" type="button" id="undo-button">
+                Undo
+              </button>
+              <button class="button secondary" type="button" id="redo-button">
+                Redo
+              </button>
+              <button class="button secondary" type="button" id="format-button">
+                Format
+              </button>
+              <button class="button secondary" type="button" id="explain-button">
+                Explain My Code
+              </button>
+            </div>
+
+            <div class="editor-stack">
+              <div class="editor-pane active" data-pane="html">
+                <textarea id="html-editor"></textarea>
+              </div>
+              <div class="editor-pane" data-pane="css">
+                <textarea id="css-editor"></textarea>
+              </div>
+              <div class="editor-pane" data-pane="js">
+                <textarea id="js-editor"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="insight-grid">
+            <article class="info-slab">
+              <p class="section-kicker">Hints</p>
+              <p id="challenge-hint" class="panel-copy">
+                Pick a challenge to get focused practice instructions.
+              </p>
+              <button class="chip-button" type="button" id="complete-challenge">
+                Mark Challenge Complete
+              </button>
+            </article>
+            <article class="info-slab">
+              <p class="section-kicker">Code Review</p>
+              <p id="issue-output" class="panel-copy">
+                Run the preview to see quick checks for unclosed tags, missing
+                semicolons, and other beginner mistakes.
+              </p>
+            </article>
+            <article class="info-slab">
+              <p class="section-kicker">Explain My Code</p>
+              <p id="explain-output" class="panel-copy">
+                Use the button above to get a plain-language explanation of what
+                your current HTML, CSS, and JavaScript are doing.
+              </p>
+            </article>
+          </div>
+        </div>
+
+        <div class="preview-panel-pro">
+          <div class="preview-actions">
+            <div class="device-buttons">
+              <button class="chip-button active" type="button" data-device="desktop">
+                Desktop
+              </button>
+              <button class="chip-button" type="button" data-device="tablet">
+                Tablet
+              </button>
+              <button class="chip-button" type="button" data-device="mobile">
+                Mobile
+              </button>
+            </div>
+            <span id="save-status" class="save-status">Autosave on</span>
+          </div>
+
+          <div id="preview-stage" class="preview-stage is-desktop">
+            <iframe
+              id="playground-preview"
+              title="Playground preview"
+              sandbox="allow-scripts"
+            ></iframe>
+          </div>
+
+          <article class="console-panel">
+            <p class="section-kicker">Console and History</p>
+            <pre id="console-output" class="console-output">Console ready.</pre>
+            <div id="history-list" class="history-list"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closetag.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/comment/comment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/xml-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/html-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/css-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/javascript-hint.min.js"></script>
+    <script src="theme.js"></script>
+    <script src="playground.js"></script>
+  </body>
+</html>
