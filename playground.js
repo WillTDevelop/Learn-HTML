@@ -17,6 +17,10 @@ const snippetButtons = document.querySelectorAll("[data-snippet]");
 const preview = document.querySelector("#playground-preview");
 const previewStage = document.querySelector("#preview-stage");
 const saveStatus = document.querySelector("#save-status");
+const goalTitle = document.querySelector("#goal-title");
+const goalDescription = document.querySelector("#goal-description");
+const goalChecklist = document.querySelector("#goal-checklist");
+const goalStatus = document.querySelector("#goal-status");
 const challengeHint = document.querySelector("#challenge-hint");
 const issueOutput = document.querySelector("#issue-output");
 const explainOutput = document.querySelector("#explain-output");
@@ -142,6 +146,12 @@ const challenges = [
   {
     id: "red-button",
     title: "Build a red button",
+    description: "Create a button in HTML and style it so it stands out as a red call-to-action.",
+    checklist: [
+      "Add a <button> element in the HTML tab",
+      "Give the button a red background in the CSS tab",
+      "Add rounded corners so it looks like a real UI button"
+    ],
     hint:
       "Make a button element in HTML and use CSS to give it a red background with rounded corners.",
     check(code) {
@@ -154,6 +164,12 @@ const challenges = [
   {
     id: "semantic-layout",
     title: "Build a semantic layout",
+    description: "Create a small page structure using meaningful HTML tags instead of generic wrappers.",
+    checklist: [
+      "Use a <header> element",
+      "Use a <main> element for the primary content",
+      "Use a <footer> element to close the page"
+    ],
     hint:
       "Use semantic structure such as header, main, section, and footer instead of only div tags.",
     check(code) {
@@ -167,6 +183,12 @@ const challenges = [
   {
     id: "interactive-card",
     title: "Make an interactive card",
+    description: "Build a visible content card and use JavaScript to make it react to a user action.",
+    checklist: [
+      "Create a visible card or panel in HTML",
+      "Style the card so it looks distinct",
+      "Use JavaScript to change text or style after a click"
+    ],
     hint:
       "Create a visible card in HTML and CSS, then use JavaScript to change text or style when a button is clicked.",
     check(code) {
@@ -543,6 +565,16 @@ function loadTemplate(templateKey) {
 function updateChallengeHint() {
   const challenge = challenges.find((item) => item.id === challengeSelect.value);
   challengeHint.textContent = challenge ? challenge.hint : "Pick a challenge to get started.";
+  goalTitle.textContent = challenge ? challenge.title : "Choose a challenge";
+  goalDescription.textContent = challenge
+    ? challenge.description
+    : "Pick a challenge to see its goal and checklist.";
+  goalChecklist.innerHTML = challenge
+    ? challenge.checklist.map((item) => `<li>${item}</li>`).join("")
+    : "";
+  goalStatus.textContent = challenge
+    ? 'Complete the checklist, then click "Mark Challenge Complete".'
+    : "No challenge selected yet.";
 }
 
 function getOpenTagCount(html, tagName) {
@@ -776,6 +808,8 @@ function markChallengeComplete() {
   if (!challenge.check(code)) {
     challengeHint.textContent =
       "Not quite yet. Compare your code with the challenge goal and try again.";
+    goalStatus.textContent =
+      "This challenge is not complete yet. Use the checklist above and compare it with your code.";
     return;
   }
 
@@ -789,6 +823,8 @@ function markChallengeComplete() {
 
   challengeHint.textContent =
     "Challenge complete. You earned 25 XP and your progress has been updated.";
+  goalStatus.textContent =
+    "Challenge complete. You earned 25 XP and unlocked more progress.";
 }
 
 function handlePreviewMessages(event) {
