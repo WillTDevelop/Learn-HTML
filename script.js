@@ -112,7 +112,7 @@ const quizQuestions = [
     wrong: {
       close:
         "Closing tags finish an element, but attributes do something different: they add extra details to it.",
-      style-only:
+      "style-only":
         "Attributes are not only for styling. They can define destinations, sources, ids, types, and more."
     },
     options: [
