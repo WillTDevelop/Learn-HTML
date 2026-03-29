@@ -1,7 +1,7 @@
 # HTML Atlas
 
 HTML Atlas is a static website that teaches HTML fundamentals with guided lessons, a quiz, and a separate full-page playground for hands-on practice.
-
+Visit https://willtdevelop.github.io/Learn-HTML/ to view the site!
 ## What The Project Includes
 
 - A lesson-based homepage in `index.html`
