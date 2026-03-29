@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HTML Atlas | Learn HTML Visually</title>
     <meta
       name="description"
-      content="A static website that teaches the fundamentals of HTML with examples, semantic structure, forms, and hands-on practice."
+      content="Learn HTML with guided lessons, a quiz, and a dedicated multi-tab playground."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,31 +24,40 @@
           <a href="#basics">Basics</a>
           <a href="#anatomy">Anatomy</a>
           <a href="#quiz">Quiz</a>
-          <a href="#playground">Playground</a>
+          <a href="playground.html">Playground</a>
           <a href="#cheatsheet">Cheat Sheet</a>
         </div>
+        <button
+          class="theme-toggle"
+          type="button"
+          data-theme-toggle
+          aria-label="Toggle color theme"
+        >
+          <span data-theme-label>Dark Mode</span>
+        </button>
       </nav>
     </div>
 
     <header class="hero" id="top">
-
       <div class="hero-grid">
         <section class="hero-copy">
-          <p class="eyebrow">Static website - beginner friendly - hands-on</p>
-          <h1>Learn HTML by seeing how the web is built.</h1>
+          <p class="eyebrow">Static course - beginner friendly - hands-on</p>
+          <h1>Learn HTML by understanding the structure of the web.</h1>
           <p class="hero-text">
-            HTML is the structure of every web page. This guide teaches the
-            essential tags, the logic behind semantic markup, and how to build
-            a clean page from scratch.
+            HTML Atlas teaches the building blocks of web pages, then sends
+            learners into a separate full-feature playground where they can test
+            ideas in real time.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#basics">Start Learning</a>
-            <a class="button secondary" href="#playground">Try Live Examples</a>
+            <a class="button secondary" href="playground.html">
+              Open Pro Playground
+            </a>
           </div>
           <ul class="hero-points">
-            <li>Read fast lessons with plain-language explanations</li>
-            <li>Compare markup with the rendered result</li>
-            <li>Practice editing real HTML snippets in the browser</li>
+            <li>Beginner lessons with plain-language explanations</li>
+            <li>A 10-question quiz based on the material on this page</li>
+            <li>A dedicated editor page with templates, tabs, and live preview</li>
           </ul>
         </section>
 
@@ -62,8 +71,8 @@
   &lt;footer&gt;...&lt;/footer&gt;
 &lt;/body&gt;</code></pre>
           <p class="card-note">
-            HTML gives meaning to content before CSS styles it or JavaScript
-            adds behavior.
+            HTML gives content meaning before CSS styles it or JavaScript adds
+            behavior.
           </p>
         </aside>
       </div>
@@ -79,23 +88,23 @@
           <article class="info-card">
             <h3>Structure</h3>
             <p>
-              HTML organizes content into headings, paragraphs, lists, links,
-              images, sections, and more.
+              HTML organizes content into headings, paragraphs, links, images,
+              lists, sections, and more.
             </p>
           </article>
           <article class="info-card">
             <h3>Meaning</h3>
             <p>
-              Semantic tags such as <code>&lt;article&gt;</code> and
-              <code>&lt;nav&gt;</code> tell browsers and assistive tools what
-              each part of a page represents.
+              Semantic tags like <code>&lt;article&gt;</code> and
+              <code>&lt;nav&gt;</code> help describe what each part of a page
+              is for.
             </p>
           </article>
           <article class="info-card">
             <h3>Foundation</h3>
             <p>
-              CSS handles presentation and JavaScript handles behavior, but HTML
-              is the foundation both depend on.
+              CSS handles presentation and JavaScript handles behavior, but
+              both depend on good HTML underneath.
             </p>
           </article>
         </div>
@@ -106,7 +115,8 @@
           <p class="section-kicker">Lesson 1</p>
           <h2>HTML Basics</h2>
           <p>
-            Most HTML uses opening and closing tags. Content lives between them.
+            Most HTML uses opening and closing tags. Content lives between
+            those tags.
           </p>
         </div>
 
@@ -121,15 +131,15 @@
           <article class="lesson-card accent-b">
             <h3>Attributes</h3>
             <p>
-              Attributes add extra information, like
-              <code>href</code> on a link or <code>src</code> on an image.
+              Attributes add extra information, like <code>href</code> on a
+              link or <code>src</code> on an image.
             </p>
           </article>
           <article class="lesson-card accent-c">
             <h3>Nesting</h3>
             <p>
-              Elements can sit inside other elements. Keep them properly opened
-              and closed to avoid broken layouts.
+              Elements can sit inside other elements, but they should still be
+              opened and closed in the right order.
             </p>
           </article>
         </div>
@@ -140,8 +150,8 @@
           <p class="section-kicker">Lesson 2</p>
           <h2>Anatomy of a Web Page</h2>
           <p>
-            A good HTML document follows a predictable structure that browsers
-            expect.
+            A solid HTML document follows a predictable structure that browsers
+            understand immediately.
           </p>
         </div>
 
@@ -167,11 +177,11 @@
             </article>
             <article>
               <h3><code>&lt;head&gt;</code></h3>
-              <p>Contains page metadata, title, and links to stylesheets.</p>
+              <p>Contains metadata, title information, and linked resources.</p>
             </article>
             <article>
               <h3><code>&lt;body&gt;</code></h3>
-              <p>Contains everything that appears on the visible page.</p>
+              <p>Contains everything the visitor actually sees on the page.</p>
             </article>
           </div>
         </div>
@@ -182,19 +192,18 @@
           <p class="section-kicker">Lesson 3</p>
           <h2>Common HTML Tags</h2>
           <p>
-            These tags show up in almost every project. Learn what each one is
-            for.
+            These are some of the tags learners use first and most often.
           </p>
         </div>
 
         <div class="tag-grid">
           <article class="tag-card">
             <h3><code>&lt;h1&gt; to &lt;h6&gt;</code></h3>
-            <p>Headings create a content hierarchy.</p>
+            <p>Headings create structure and hierarchy.</p>
           </article>
           <article class="tag-card">
             <h3><code>&lt;p&gt;</code></h3>
-            <p>Paragraphs hold blocks of text.</p>
+            <p>Paragraphs hold regular blocks of text.</p>
           </article>
           <article class="tag-card">
             <h3><code>&lt;a&gt;</code></h3>
@@ -202,7 +211,7 @@
           </article>
           <article class="tag-card">
             <h3><code>&lt;img&gt;</code></h3>
-            <p>Images embed pictures and should include descriptive alt text.</p>
+            <p>Images embed pictures and should include alt text.</p>
           </article>
           <article class="tag-card">
             <h3><code>&lt;ul&gt;</code> and <code>&lt;ol&gt;</code></h3>
@@ -220,8 +229,8 @@
           <p class="section-kicker">Lesson 4</p>
           <h2>Semantic HTML</h2>
           <p>
-            Semantic elements make pages easier to understand for people,
-            browsers, and assistive technology.
+            Semantic elements make pages clearer for people, browsers, and
+            assistive technology.
           </p>
         </div>
 
@@ -232,7 +241,7 @@
           </article>
           <article class="semantic-card">
             <h3><code>&lt;nav&gt;</code></h3>
-            <p>A collection of important navigation links.</p>
+            <p>A group of important navigation links.</p>
           </article>
           <article class="semantic-card">
             <h3><code>&lt;main&gt;</code></h3>
@@ -240,15 +249,15 @@
           </article>
           <article class="semantic-card">
             <h3><code>&lt;section&gt;</code></h3>
-            <p>A thematic grouping of related content.</p>
+            <p>A thematic group of related content.</p>
           </article>
           <article class="semantic-card">
             <h3><code>&lt;article&gt;</code></h3>
-            <p>A standalone piece of content like a post or story.</p>
+            <p>A standalone piece of content like a story or post.</p>
           </article>
           <article class="semantic-card">
             <h3><code>&lt;footer&gt;</code></h3>
-            <p>Closing content such as credits, links, or contact info.</p>
+            <p>Closing content such as credits or related links.</p>
           </article>
         </div>
       </section>
@@ -258,8 +267,8 @@
           <p class="section-kicker">Lesson 5</p>
           <h2>Forms and Input</h2>
           <p>
-            Forms collect information from users. Labels are important for
-            usability and accessibility.
+            Forms collect information from users. Labels are especially
+            important for usability and accessibility.
           </p>
         </div>
 
@@ -279,7 +288,7 @@
             </article>
             <article>
               <h3><code>&lt;button&gt;</code></h3>
-              <p>Triggers form submission or other actions.</p>
+              <p>Triggers submission or another action.</p>
             </article>
           </div>
 
@@ -296,53 +305,39 @@
         </div>
       </section>
 
-      <section class="section playground" id="playground">
+      <section class="section playground-promo" id="playground">
         <div class="section-heading">
-          <p class="section-kicker">Practice</p>
-          <h2>Interactive HTML Playground</h2>
+          <p class="section-kicker">Build</p>
+          <h2>Step Into The Pro Playground</h2>
           <p>
-            Switch between examples or type any HTML you want. The editor adds
-            closing tags for common elements, supports Tab indentation, lets
-            you type <code>!</code> plus Enter for a starter page, and updates
-            the preview live.
+            The editor now lives on its own page so learners get a cleaner
+            workspace with HTML, CSS, and JavaScript tabs plus tools for
+            experimenting faster.
           </p>
         </div>
 
-        <div class="playground-controls" aria-label="Example selector">
-          <button class="example-button active" data-example="blank">
-            Blank Canvas
-          </button>
-          <button class="example-button" data-example="profile">
-            Profile Card
-          </button>
-          <button class="example-button" data-example="article">
-            Article
-          </button>
-          <button class="example-button" data-example="form">
-            Form
-          </button>
+        <div class="promo-grid">
+          <article class="promo-card">
+            <h3>What is inside</h3>
+            <ul>
+              <li>Live preview inside a sandboxed iframe</li>
+              <li>Starter templates, autosave, run, reset, copy, and download</li>
+              <li>Challenges, hints, XP, badges, and progress tracking</li>
+            </ul>
+          </article>
+          <article class="promo-card">
+            <h3>Editor upgrades</h3>
+            <ul>
+              <li>Separate HTML, CSS, and JavaScript tabs</li>
+              <li>Line numbers, syntax highlighting, and autocomplete support</li>
+              <li>Device preview modes and lesson-aligned examples</li>
+            </ul>
+          </article>
         </div>
 
-        <div class="playground-grid">
-          <div class="editor-panel">
-            <label class="editor-label" for="html-editor">HTML Code</label>
-            <div class="editor-toolbar">
-              <span>Auto-closing tags on</span>
-              <span>Tab = 2 spaces</span>
-              <span>! + Enter = HTML starter</span>
-              <span>Live preview</span>
-            </div>
-            <textarea id="html-editor" spellcheck="false"></textarea>
-          </div>
-          <div class="preview-panel">
-            <p class="preview-label">Rendered Preview</p>
-            <iframe
-              id="preview-frame"
-              title="HTML preview"
-              sandbox="allow-same-origin"
-            ></iframe>
-          </div>
-        </div>
+        <a class="button primary" href="playground.html">
+          Launch Playground Page
+        </a>
       </section>
 
       <section class="section quiz-section" id="quiz">
@@ -351,7 +346,7 @@
           <h2>HTML Quiz</h2>
           <p>
             Answer 10 questions based on the lessons above. If you miss one,
-            the quiz will tell you what went wrong and what concept to review.
+            the quiz tells you what went wrong and what concept to review.
           </p>
         </div>
 
@@ -394,7 +389,7 @@
             </ul>
           </article>
           <article class="sheet-card">
-            <h3>Media & Links</h3>
+            <h3>Media and Links</h3>
             <ul>
               <li><code>&lt;a href=""&gt;</code> links</li>
               <li><code>&lt;img src="" alt="" /&gt;</code> images</li>
@@ -403,7 +398,7 @@
             </ul>
           </article>
           <article class="sheet-card">
-            <h3>Layout & Semantics</h3>
+            <h3>Layout and Semantics</h3>
             <ul>
               <li><code>&lt;header&gt;</code></li>
               <li><code>&lt;nav&gt;</code></li>
@@ -420,6 +415,7 @@
       <a href="#top">Back to top</a>
     </footer>
 
+    <script src="theme.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
